@@ -1,0 +1,14 @@
+extends layouts
+block content
+    br
+    .card
+        .card-header
+            GG Writting by 
+            strong #{author}
+        .card-body
+            h5.card-title  #{article.title}
+            p.card-text #{article.body}
+            if user
+                if user.id==article.author
+                    a.btn.btn-warning(href='/article/edit/'+ article._id style='margin:5px;') Edit
+                    a.btn.btn-danger(href='/article/delete/'+ article._id style='margin:5px;') Delete
